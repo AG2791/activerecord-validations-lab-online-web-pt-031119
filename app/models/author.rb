@@ -3,7 +3,7 @@ class Author < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :phone_number, length: { is: 10 }
   validates: :title, presence: true
-
+   validates (:post_content, { :length => { :minimum => 2 } })
 
 end
 
