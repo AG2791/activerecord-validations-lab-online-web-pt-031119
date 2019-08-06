@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
   
   validates(:post_summary, { :length => { :maximum => 250 } })
   
+   validate :is_clickbait?
+  
    CLICKBAIT_PATTERNS = [
     /Won't Believe/i,
     /Secret/i,
